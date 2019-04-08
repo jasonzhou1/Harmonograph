@@ -69,8 +69,6 @@ function drawAll() {
   x = computex(n);
   y = computey(n);
   stuff = [];
-  // stuff = generate_data_objects();
-  // Plotly.addFrames(graph, stuff);
 
   Plotly.newPlot(graph, [{
     x: x,
