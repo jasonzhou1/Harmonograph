@@ -10,6 +10,9 @@ var f1 = .04, f2 = .08, f3 = .08;
 var p1 = 0, p2 = 0, p3 = 0;
 
 var layout = {
+  autosize: true,
+  width: 1200,
+  height: 800,
   xaxis: {
     range: [-2, 2],
     showgrid: false,
@@ -31,7 +34,7 @@ var layout = {
 var config = {
   toImageButtonOptions: {
     format: 'png', // one of png, svg, jpeg, webp
-    filename: 'custom_image',
+    filename: 'harmonograph_image',
     height: 2048,
     width: 2048,
     scale: 1 // Multiply title/legend/axis/canvas sizes by this factor
@@ -123,8 +126,9 @@ function updateTraceColor() {
 
 function updateBackgroundColor() {
   layout["plot_bgcolor"] = document.getElementById('background_color_value').value;
-  // layout["paper_bgcolor"] = document.getElementById('background_color_value').value;
   drawAll();
-
 }
 
+function updatePaperColor() {
+    layout["paper_bgcolor"] = document.getElementById('background_color_value').value;
+}
