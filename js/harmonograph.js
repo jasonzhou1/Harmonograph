@@ -5,9 +5,9 @@ var graph = document.getElementById('graph');
 var t = 0;
 
 var pi = Math.PI;
-var d1 = 0.0002, d2 = 0.0002, d3 = 0.0004;
-var f1 = .04, f2 = .08, f3 = .08;
-var p1 = 0, p2 = 0, p3 = 0;
+var d1 = 0.0002, d2 = 0.0002, d3 = 0.0004, d4 = 0.0004;
+var f1 = .04, f2 = .08, f3 = .08, f4 = .08;
+var p1 = 0, p2 = 0, p3 = 0, p4= 0;
 
 var layout = {
   autosize: true,
@@ -85,10 +85,12 @@ function setVars() {
   d1 = document.getElementById("d1slider").value;
   d2 = document.getElementById("d2slider").value;
   d3 = document.getElementById("d3slider").value;
+  d4 = document.getElementById("d4slider").value;
 
   f1 = document.getElementById("f1slider").value;
   f2 = document.getElementById("f2slider").value;
   f3 = document.getElementById("f3slider").value;
+  f4 = document.getElementById("f4slider").value;
 
   // p1 = document.getElementById("p1slider").value;
   // p2 = document.getElementById("p2slider").value;
@@ -114,7 +116,7 @@ function computex(t) {
 function computey(n) {
   temp = [];
   for (i = 0; i < n; i++) {
-    temp[i] = Math.pow(Math.E, -d3 * i) * Math.sin(i * f3 + p3) * 2;
+    temp[i] = Math.pow(Math.E, -d3 * i) * Math.sin(i * f3 + p3) + Math.pow(Math.E, -d4 * i) * Math.sin(i * f4 + p4);
   }
   return temp;
 }
